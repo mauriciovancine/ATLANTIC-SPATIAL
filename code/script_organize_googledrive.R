@@ -16,3 +16,7 @@ file_id <- googledrive::as_id("1yPGzwXYy8bYqV5xl31W8iFCXJUdRufsF")
 file <- googledrive::drive_get(file_id)
 
 googledrive::drive_download(file, overwrite = TRUE)
+
+atlantic_statial <- readr::read_csv("data/atlantic_spatial_description.csv")
+atlantic_statial
+
