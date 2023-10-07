@@ -21,5 +21,8 @@ atlantic_statial <- readr::read_csv("data/atlantic_spatial_description.csv")
 atlantic_statial
 
 atlantic_statial %>% 
-    dplyr::count(type)
+    dplyr::count(metric_group)
 
+a <- atlantic_statial %>% 
+    dplyr::count(unit)
+a
