@@ -20,3 +20,6 @@ googledrive::drive_download(file, overwrite = TRUE)
 atlantic_statial <- readr::read_csv("data/atlantic_spatial_description.csv")
 atlantic_statial
 
+atlantic_statial %>% 
+    dplyr::count(type)
+

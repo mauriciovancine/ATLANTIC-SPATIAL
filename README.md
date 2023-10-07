@@ -1,11 +1,18 @@
 # ATLANTIC SPATIAL
 
+### Description
+
 <p align="justify">
+ATLANTIC SPATIAL is a compilation of spatial covariates dataset of landscape, topographic, hydrologic and anthropogenic metrics for the entire Atlantic Forest at fine spatial resolution (30-m and 60-m) for the year 2020. 
+
 ATLANTIC SPATIAL dataset is part of the <a href="https://github.com/LEEClab/Atlantic_series">ATLANTIC series</a>, on which research teams are compiling biodiversity information of Atlantic Forest. This paper follows previous published data papers in <a href="https://esajournals.onlinelibrary.wiley.com/doi/toc/10.1002/(ISSN)1939-9170.AtlanticPapers">Ecology</a>.
+</p>
 
-The dataset will be submitted to Ecology::
+### Citation
 
-Vancine, M. H., B. B. Niebuhr, R. L. Muylaert, J. E. F. Oshima, V. Tonetti, R. Bernardo, R. S. C. Alves, E. M. Zanette, J. G. R. Giovanelli, C. H. Grohmann, M. C. Ribeiro. ATLANTIC SPATIAL: a dataset of landscape, topographic, hydrologic and anthropogenic metrics for the Atlantic Forests of South America. Ecology in prep. </p>
+<p align="justify">
+Vancine, M. H., B. B. Niebuhr, R. L. Muylaert, J. E. F. Oshima, V. Tonetti, R. Bernardo, R. S. C. Alves, E. M. Zanette, J. G. R. Giovanelli, C. H. Grohmann, M. C. Ribeiro. ATLANTIC SPATIAL: a dataset of landscape, topographic, hydrologic and anthropogenic metrics for the Atlantic Forests of South America. Ecology in prep.
+</p>
 
 ### Abstract
 
@@ -21,6 +28,30 @@ Space is one of the main drivers of biodiversity, once it regulates the underlyi
 <p align="justify">
 <b>Figure 2.</b> Framework used to summarize land cover classes into Atlantic Forest habitat types. LULC classes of MapBiomas in AF (Brazil, Argentina, and Paraguay). (a). Grouped land cover classes (b). Two vegetation classes were considered as habitat to calculate the landscape metrics (c).
 </p>
+
+---
+
+### R package
+
+We created the atlanticr R package (https://mauriciovancine.github.io/atlanticr/) which, in addition to facilitating access to other data papers, provides a table with all metrics and their information "atlantic_spatial" and a function to download rasters "atlantic_spatial_download()".
+
+```{r}
+# install package
+devtools::install_githun("mauriciovancine/atlanticr")
+
+# load package
+library(atlanticr)
+
+# dataset
+head(atlanticr::atlantic_spatial)
+
+# download
+atlanticr::atlantic_spatial_download(metric = , 
+                                     scale = , 
+                                     edge_depth = , 
+                                     gap_crossing = , 
+                                     path = )
+```
 
 ---
 
