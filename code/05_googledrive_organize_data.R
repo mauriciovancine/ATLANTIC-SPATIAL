@@ -28,8 +28,7 @@ atlantic_spatial_files_join <- atlantic_spatial_files %>%
                      tfw = paste0(tfw, collapse = "")) %>% 
     dplyr::mutate(link_drive_tif = paste0("https://drive.google.com/file/d/", tif), .after = tif) %>% 
     dplyr::mutate(link_drive_tfw = paste0("https://drive.google.com/file/d/", tfw), .after = tfw) %>% 
-    dplyr::rename(file_id_drive_tif = tif,
-                  file_id_drive_tfw = tfw)
+    dplyr::select(-c(tif, tfw))
 atlantic_spatial_files_join
 
 atlantic_spatial_description <- dplyr::left_join(atlantic_spatial_description, atlantic_spatial_files_join, by = "file_name")
@@ -38,6 +37,10 @@ atlantic_spatial_description
 atlantic_spatial_description %>% 
     readr::write_csv("~/Downloads/atlantic_spatial_description.csv")
 
+atlantic_spatial_description <- readr::read_csv("data/atlantic_spatial_description.csv") %>% 
+  dplyr::mutate(link_osf_tfw = stringr::str_replace_all(link_osf_tfw, "https://osf.io/", "https://osf.io/download/"),
+                link_osf_tif = stringr::str_replace_all(link_osf_tif, "https://osf.io/", "https://osf.io/download/")) %>% 
+    readr::write_csv("~/Downloads/atlantic_spatial_description_osf.csv")
 
 # data to rename ----
 atlantic_spatial_description_rename <- atlantic_spatial_description %>% 
