@@ -14,7 +14,7 @@ ATLANTIC SPATIAL dataset is part of the <a href="https://github.com/LEEClab/Atla
 
 <p align="justify">
 
-Vancine, M. H., B. B. Niebuhr, R. L. Muylaert, J. E. F. Oshima, V. Tonetti, R. Bernardo, R. S. C. Alves, E. M. Zanette, V. C. Souza, J. G. R. Giovanelli, C. H. Grohmann, M. C. Ribeiro. ATLANTIC SPATIAL: a dataset of landscape, topographic, hydrologic and anthropogenic metrics for the Atlantic Forests. Ecology (*in review*).
+Vancine, M. H., B. B. Niebuhr, R. L. Muylaert, J. E. F. Oshima, V. Tonetti, R. Bernardo, R. S. C. Alves, E. M. Zanette, V. C. Souza, J. G. R. Giovanelli, C. H. Grohmann, M. C. Ribeiro. ATLANTIC SPATIAL: a dataset of landscape, topographic, hydrologic and anthropogenic metrics for the Atlantic Forests. Ecology (*in review*). Preprint: EcoEvoRxiv. DOI: https://doi.org/10.32942/X26P58. 
 
 </p>
 
