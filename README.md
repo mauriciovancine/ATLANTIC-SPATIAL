@@ -44,7 +44,7 @@ We created the R package [atlanticr](https://mauriciovancine.github.io/atlanticr
 
 ```{r}
 # install package
-devtools::install_githun("mauriciovancine/atlanticr")
+devtools::install_github("mauriciovancine/atlanticr")
 
 # load package
 library(atlanticr)
