@@ -26,6 +26,8 @@ rgrass::initGRASS(gisBase = system("grass --config path", inter = TRUE),
 rgrass::execGRASS(cmd = "g.region", flags = c("a", "p"), raster = "af_lim")
 rgrass::execGRASS(cmd = "r.mask", flags = "overwrite", raster = "af_lim")
 
+rgrass::execGRASS(cmd = "r.mask", flags = "overwrite", raster = "499_atlantic_spatial_indigenous_territory_binary@PERMANENT")
+
 # calculate ---------------------------------------------------------------
 
 # distance
@@ -41,6 +43,7 @@ lsmetrics::lsm_distance(input = "491_atlantic_spatial_roads_binary", distance_ty
 lsmetrics::lsm_distance(input = "493_atlantic_spatial_railways_binary", distance_type = "outside")
 lsmetrics::lsm_distance(input = "495_atlantic_spatial_roads_railways_binary", distance_type = "outside")
 lsmetrics::lsm_distance(input = "497_atlantic_spatial_protected_areas_binary", distance_type = "outside")
-lsmetrics::lsm_distance(input = "499_atlantic_spatial_indigenous_territory_binary", distance_type = "outside")
+lsmetrics::lsm_distance(input = "499_atlantic_spatial_indigenous_territories_binary", distance_type = "outside")
+lsmetrics::lsm_distance(input = "501_atlantic_spatial_quilombola_territories_binary", distance_type = "outside")
 
 # end ---------------------------------------------------------------------
