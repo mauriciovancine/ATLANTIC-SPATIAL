@@ -20,9 +20,14 @@ options(timeout = 1e5)
 
 # download data -----------------------------------------------------------
 
+# folder structure to download data
+folder <- "01_data"; if(!dir.exists(folder)) dir.create(folder)
+folder <- "01_data/01_limits"; if(!dir.exists(folder)) dir.create(folder)
+folder <- "01_data/01_limits/00_raw"; if(!dir.exists(folder)) dir.create(folder)
+
 # atlantic forest limits
-download.file(url = "https://github.com/LEEClab/ATLANTIC-limits/blob/master/limites_integradores_wgs84_v1_1_0.rar",
-              destfile = "01_data/01_limits/00_raw/limites_integradores_wgs84_v1_1_0.rar", mode = "wb")
+download.file(url = "https://github.com/LEEClab/ATLANTIC-limits/blob/master/data/limites_integradores_wgs84_v1_2_0.zip",
+              destfile = "01_data/01_limits/00_raw/limites_integradores_wgs84_v1_2_0.zip", mode = "wb")
 
 system("unrar e 01_data/01_limits/00_raw/limites_integradores_wgs84_v1_1_0.rar 01_data/01_limits/00_raw")
 
