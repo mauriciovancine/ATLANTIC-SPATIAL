@@ -14,7 +14,7 @@ ATLANTIC SPATIAL dataset is part of the <a href="https://github.com/LEEClab/Atla
 
 <p align="justify">
 
-Vancine, M. H., B. B. Niebuhr, R. L. Muylaert, J. E. F. Oshima, V. Tonetti, R. Bernardo, R. S. C. Alves, E. M. Zanette, V. C. Souza, J. G. R. Giovanelli, C. H. Grohmann, M. C. Ribeiro. ATLANTIC SPATIAL: a dataset of landscape, topographic, hydrologic and anthropogenic metrics for the Atlantic Forests. Ecology (*in review*). Preprint: EcoEvoRxiv. DOI: https://doi.org/10.32942/X26P58. 
+Vancine, M. H., B. B. Niebuhr, R. L. Muylaert, J. E. F. Oshima, V. Tonetti, R. Bernardo, R. S. C. Alves, E. M. Zanette, V. C. Souza, J. G. R. Giovanelli, J. W. Ribeiro, C. de Angelo, C. H. Grohmann, M. Galetti, M. C. Ribeiro. ATLANTIC SPATIAL: a dataset of landscape, topographic, hydrologic and anthropogenic metrics for the Atlantic Forests. Ecology (*in review*). Preprint: EcoEvoRxiv. DOI: https://doi.org/10.32942/X26P58. 
 
 </p>
 
@@ -22,7 +22,7 @@ Vancine, M. H., B. B. Niebuhr, R. L. Muylaert, J. E. F. Oshima, V. Tonetti, R. B
 
 <p align="justify">
 
-Space is one of the main drivers of biodiversity, once it regulates the underlying processes affecting the distribution and dynamics of species. It is a fundamental factor in face of the rapid climate and land use and land cover changes at local and global scales, which are linked to habitat loss and fragmentation and their impacts on various organisms. The Atlantic Forest of South America (AF) is among the global biodiversity hotspots because of its high species richness and endemism. Most of the threats to the AF biodiversity is due to the expansion of urbanization and industry, extensive agricultural and livestock production, and mining. Here, we make available integrated and fine-scale spatial information (resolution = 30 m) for the entire AF extent for the year 2020. The metrics consider different vegetation classes (forest and forest plus other natural vegetation), effects of linear structure (roads and railways) and multiple scales (radius buffer from 50 m to 2,500 m and up to 10 km for some metrics). The entire data set is composed of 500 rasters and the AF delimitation vector, available through the R package *atlanticr*, which we developed in order to facilitate the organization and acquisition of the data. The metrics consists of: land cover (31 classes), distance to grouped land cover classes (forest vegetation, natural vegetation, pasture, temporary crop, perennial crop, forest plantation, urban areas, mining, and water), a set of landscape, topographic, and hydrologic metrics, and anthropogenic infrastructure. The landscape metrics include landscape morphology (classification as matrix, core, edge, corridor, stepping stone, branch, and perforation), fragment area and proportion, area and number of patches, edge and core areas and proportion, structural and functional connectivity (for different organisms' gap-crossing capabilities), distance to fragment edges, fragment perimeter and perimeter-area ratio, and landscape diversity. Topographic metrics include elevation, slope, aspect, curvatures, and landform elements (peak, ridge, shoulder, spur, slope, hollow, footslope, valley, pit, and ﬂat), hydrologic metrics comprise potential springs and its kernel and potential streams and respective distances, and anthropogenic infrastructure maps contain roads, railways, protected areas, and indigenous territories and the respective distance to each of them. These data sets will allow for efficient integration of biodiversity and environmental data for the AF in future ecological studies, and we expect it to be an important reference and data source for landscape planning, biodiversity conservation, and forest restoration programs.
+Space is one of the main drivers of biodiversity, once it regulates the underlying processes affecting the distribution and dynamics of species and communities. It is a fundamental factor in face of the rapid climate and land use and land cover changes at local and global scales, which are linked to habitat loss and fragmentation and their impacts on various organisms. The Atlantic Forest of South America (AF) is among the global biodiversity hotspots because of its high species richness and endemism. Most of the threats to the AF biodiversity are due to the expansion of urbanization and industry, extensive agricultural and livestock production, and mining. Here, we make available integrated and fine-scale spatial information (resolution = 30 m) for the entire AF extent for the year 2020. The metrics consider different vegetation classes (forest and forest plus other natural vegetation), effects of linear structure (roads and railways) and multiple scales (radius buffer from 50 m to 2,500 m and up to 10 km for some metrics). The entire data set consists of over 500 rasters and the AF delimitation vector, available through the R package [_atlanticr_](https://github.com/mauriciovancine/atlanticr), which we developed to facilitate the organization and acquisition of the data. The metrics consists of land cover (31 classes), distance to grouped land cover classes (forest vegetation, natural vegetation, pasture, temporary crop, perennial crop, forest plantation, urban areas, mining, and water), a set of landscape, topographic and hydrological metrics, and anthropogenic infrastructure. The landscape metrics include landscape morphology (classification as matrix, core, edge, corridor, stepping stone, branch, and perforation), fragment area and proportion, area and number of patches, edge and core areas and proportion, structural and functional connectivity (for different organisms’ gap-crossing capabilities), distance to fragment edges, fragment perimeter and perimeter-area ratio, and landscape diversity. Topographic metrics include elevation, slope, aspect, curvatures, and landform elements (peak, ridge, shoulder, spur, slope, hollow, footslope, valley, pit and ﬂat). Hydrological metrics comprise potential springs and its kernel density and potential streams and the respective distances, and anthropogenic infrastructure maps contain roads, railways, protected areas, indigenous territories, and quilombola territories, and the respective distance to each of them. This data set will allow efficient integration of biodiversity and environmental data for the AF in future ecological studies, and we might be an important reference and data source for landscape planning, biodiversity conservation and forest restoration programs.
 
 <p align="center">
 
@@ -44,32 +44,24 @@ We created the R package [atlanticr](https://mauriciovancine.github.io/atlanticr
 
 ```{r}
 # install package
-devtools::install_github("mauriciovancine/atlanticr")
+install.packages("remotes")
+remotes::install_github("mauriciovancine/atlanticr")
 
 # load package
 library(atlanticr)
 
-# dataset
+# list files
 head(atlanticr::atlantic_spatial)
 
-# download
-atlanticr::atlantic_spatial_download(id, 
-                                     metric, 
-                                     metric_group,
-                                     metric_type,
-                                     lulc_class,
-                                     edge_depth,
-                                     gap_crossing,
-                                     scale_buffer_radius,
-                                     resolution,
-                                     path)
+# file download
+atlanticr::atlantic_spatial_download(id = 1, path = "~/Downloads")
 ```
 
 ------------------------------------------------------------------------
 
 ## code
 
-All analyses were performed in [R language](https://www.r-project.org/) and [GRASS GIS](https://grass.osgeo.org/) through [*rgrass*](https://rsbivand.github.io/rgrass/) R package. This folder contains all R code files used:
+All analyses were performed in [R language](https://www.r-project.org/) and [GRASS GIS](https://grass.osgeo.org/) through [*rgrass*](https://rsbivand.github.io/rgrass/) R package. We gather in this foler the scripts to make the preparation of data and the computation of all the metrics reproducible. This folder contains R code files used to:
 
 -   `01_01_download_limits.R`: download Atlantic Forest limit
 -   `01_02_download_landscape.R`: download Land Use and Land Cover from [MapBiomas Brazil v07](https://brasil.mapbiomas.org/) and [MapBiomas Bosque Atlántico v02](https://bosqueatlantico.mapbiomas.org/)
@@ -93,6 +85,7 @@ All analyses were performed in [R language](https://www.r-project.org/) and [GRA
 -   `03_05_grassgis_metrics_anthropogenic.R`: calculate anthropogenic metrics on the GRASS GIS
 -   `04_grass_gis_color.R`: define raster colors on the GRASS GIS
 -   `05_googledrive_organize_data.R`: organize data on the Google Drive
+-   `05_zenodo_organize_data.R`: organize data on Zenodo repositories
 -   `lsm_hydrologic.R`: function to calculate spring and streams from DEM raster
 -   `lsm_hydrologic_basin.R`: function to calculate spring and streams by basins from DEM raster
 
@@ -114,7 +107,7 @@ Universidade Estadual Paulista (UNESP), Instituto de Biociências, Departamento 
 
 <ins>[Bernardo Brandão Niebuhr](https://www.nina.no/english/Contact/Employees/Employee-info?AnsattID=16449)</ins>
 
-Department of Terrestrial Biodiversity, Norwegian Institute for Nature Research (NINA), Trondheim, Norway
+Norwegian Institute for Nature Research (NINA), Oslo, Norway
 
 <ins>[Renata L. Muylaert](https://renatamuy.github.io/)</ins>
 
