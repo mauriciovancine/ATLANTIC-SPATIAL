@@ -1,0 +1,7 @@
+COMMAND: v.in.region --overwrite --quiet output="r_classes_region" type="area" cat=1
+GISDBASE: grassdb
+LOCATION: newLocation MAPSET: PERMANENT USER: mude DATE: Thu Aug 24 00:16:05 2023
+---------------------------------------------------------------------------------
+COMMAND: v.buffer --overwrite --quiet input="r_classes_region" layer="-1" type="point,line,area" output="r_classes_region_buffer" distance=100 angle=0 scale=1.0
+GISDBASE: grassdb
+LOCATION: newLocation MAPSET: PERMANENT USER: mude DATE: Thu Aug 24 00:16:05 2023

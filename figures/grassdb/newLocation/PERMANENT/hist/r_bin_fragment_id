@@ -1,0 +1,10 @@
+Mon Jan 20 15:25:08 2025
+r_bin_fragment_id
+PERMANENT
+Seleção
+raster
+r_bin_fragment_null
+
+gerado por RCLUMP~1
+RCLUMP~1 --overwrite --quiet -d input="r_bin_fragment_null" output="\
+r_bin_fragment_id" threshold=0 minsize=1
