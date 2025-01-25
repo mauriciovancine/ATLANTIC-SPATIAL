@@ -1,6 +1,6 @@
 # ATLANTIC SPATIAL
 
-### Description
+## Description
 
 <p align="justify">
 
@@ -10,7 +10,7 @@ ATLANTIC SPATIAL dataset is part of the <a href="https://github.com/LEEClab/Atla
 
 </p>
 
-### Citation
+## Citation
 
 <p align="justify">
 
@@ -18,7 +18,7 @@ Vancine, M. H., B. B. Niebuhr, R. L. Muylaert, J. E. F. Oshima, V. Tonetti, R. B
 
 </p>
 
-### Abstract
+## Abstract
 
 <p align="justify">
 
@@ -38,9 +38,34 @@ Space is one of the main drivers of biodiversity, once it regulates the underlyi
 
 ------------------------------------------------------------------------
 
+## Access to the data
+
+### Zenodo
+
+The data sets are archived in a series of Zenodo repositores, where one might see the metadata and download the layers manually. The repositories are organized thematically according to types of metrics, as described below:
+
+| Zenodo repository title | Zenodo repository link | Zenodo DOI |
+|---|---|---|
+| ATLANTIC SPATIAL - Habitat | https://zenodo.org/records/14529439 | https://doi.org/10.5281/zenodo.14529439 |
+| ATLANTIC SPATIAL - Fragment | https://zenodo.org/records/14574196 | https://doi.org/10.5281/zenodo.14574196 |
+| ATLANTIC SPATIAL - Core 30\|60\|90m Forest | https://zenodo.org/records/14529477 | https://doi.org/10.5281/zenodo.14529477 |
+| ATLANTIC SPATIAL - Core 120\|240m Forest | https://zenodo.org/records/14574249 | https://doi.org/10.5281/zenodo.14574249 |
+| ATLANTIC SPATIAL - Edge 30\|60\|90m Forest | https://zenodo.org/records/14529566 | https://doi.org/10.5281/zenodo.14529566 |
+| ATLANTIC SPATIAL - Edge 120\|240m Forest | https://zenodo.org/records/14577603 | https://doi.org/10.5281/zenodo.14577603 |
+| ATLANTIC SPATIAL - Core 30\|60\|90m Natural | https://zenodo.org/records/14577592 | https://doi.org/10.5281/zenodo.14577592 |
+| ATLANTIC SPATIAL - Core 120\|240m Natural | https://zenodo.org/records/14577598 | https://doi.org/10.5281/zenodo.14577598 |
+| ATLANTIC SPATIAL - Edge 30\|60\|90m Natural | https://zenodo.org/records/14529647 | https://doi.org/10.5281/zenodo.14529647 |
+| ATLANTIC SPATIAL - Edge 120\|240m Natural | https://zenodo.org/records/14577617 | https://doi.org/10.5281/zenodo.14577617 |
+| ATLANTIC SPATIAL - Connectivity | https://zenodo.org/records/14529380 | https://doi.org/10.5281/zenodo.14529380 |
+| ATLANTIC SPATIAL - Diversity Shannon | https://zenodo.org/records/14529710 | https://doi.org/10.5281/zenodo.14529710 |
+| ATLANTIC SPATIAL - Diversity Simpson | https://zenodo.org/records/14529750 | https://doi.org/10.5281/zenodo.14529750 |
+| ATLANTIC SPATIAL - Topographic | https://zenodo.org/records/14529237 | https://doi.org/10.5281/zenodo.14529237 |
+| ATLANTIC SPATIAL - Hydrological | https://zenodo.org/records/14500641 | https://doi.org/10.5281/zenodo.14500641 |
+| ATLANTIC SPATIAL - Anthropogenic | https://zenodo.org/records/14529355 | https://doi.org/10.5281/zenodo.14529355  |
+
 ### R package
 
-We created the R package [atlanticr](https://mauriciovancine.github.io/atlanticr/) which, in addition to facilitating access to other data papers, provides a table with all metrics and their information "atlantic_spatial" and a function to download rasters "atlantic_spatial_download()".
+We also created the R package [atlanticr](https://mauriciovancine.github.io/atlanticr/) which, in addition to facilitating access to other data papers, provides a table with all metrics and their information "atlantic_spatial" and a function to download rasters "atlantic_spatial_download()".
 
 ```{r}
 # install package
@@ -57,9 +82,17 @@ head(atlanticr::atlantic_spatial)
 atlanticr::atlantic_spatial_download(id = 1, path = "~/Downloads")
 ```
 
+This allows for automated and sequential access to the data, complementing the direct access to individual files from the Zenodo repositores shown above.
+
 ------------------------------------------------------------------------
 
-## code
+## Organization of this repository
+
+This repository provides code to guarantee the transparency and reproducibility of the metrics computed for the Atlantic Forest. For access and use of the resulting layers, use the [atlanticr](https://mauriciovancine.github.io/atlanticr/) R package mentioned above.
+
+The material of this repository is organized in the following folders, as described below.
+
+### code
 
 All analyses were performed in [R language](https://www.r-project.org/) and [GRASS GIS](https://grass.osgeo.org/) through [*rgrass*](https://rsbivand.github.io/rgrass/) R package. We gather in this foler the scripts to make the preparation of data and the computation of all the metrics reproducible. This folder contains R code files used to:
 
@@ -89,11 +122,11 @@ All analyses were performed in [R language](https://www.r-project.org/) and [GRA
 -   `lsm_hydrologic.R`: function to calculate spring and streams from DEM raster
 -   `lsm_hydrologic_basin.R`: function to calculate spring and streams by basins from DEM raster
 
-## data
+### data
 
 Table with layer information and download links.
 
-## figures
+### figures
 
 All figures in the paper in high definition.
 
