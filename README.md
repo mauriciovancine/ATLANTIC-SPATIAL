@@ -79,7 +79,7 @@ library(atlanticr)
 head(atlanticr::atlantic_spatial)
 
 # file download
-atlanticr::atlantic_spatial_download(id = 1, path = "~/Downloads")
+atlanticr::atlantic_spatial_download(id = 1, path = ".")
 ```
 
 This allows for automated and sequential access to the data, complementing the direct access to individual files from the Zenodo repositores shown above.
