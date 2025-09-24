@@ -36,7 +36,7 @@ The data sets are archived in a series of Zenodo repositores, where one might se
 
 | Zenodo repository title | Zenodo repository link | Zenodo DOI |
 |---|---|---|
-| ATLANTIC SPATIAL - Habitat | https://zenodo.org/records/14529439 | https://doi.org/10.5281/zenodo.14529439 |
+| ATLANTIC SPATIAL - Habitat | https://zenodo.org/records/17180586 | https://doi.org/10.5281/zenodo.17180586 |
 | ATLANTIC SPATIAL - Fragment | https://zenodo.org/records/14574196 | https://doi.org/10.5281/zenodo.14574196 |
 | ATLANTIC SPATIAL - Core 30\|60\|90m Forest | https://zenodo.org/records/14529477 | https://doi.org/10.5281/zenodo.14529477 |
 | ATLANTIC SPATIAL - Core 120\|240m Forest | https://zenodo.org/records/14574249 | https://doi.org/10.5281/zenodo.14574249 |
